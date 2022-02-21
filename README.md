@@ -19,7 +19,7 @@ the variable is PORT, the variable is used by Express to listen on this PORT or 
 ### How to use
 ````
 $ git clone https://github.com/luizfernandorg/TodoListV1.git
-$ cd Newsletter-Signup
+$ cd TodoListV1
 $ npm install
 ````
 
