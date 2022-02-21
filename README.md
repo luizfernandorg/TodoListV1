@@ -15,7 +15,7 @@ The purpose of this project is to demonstrate a little of the use of EJS, with E
 ### Environment
 
 Only one environment variable is in use in this project,
-the variable is PORT, the variable is used by Express to listen on this PORT or it'll use the port 3000 if the variable doesn't exist.
+the variable is PORT, the variable is used by Express to listen on this PORT or it'll use the port 3000 if the variable doesn't exist. I did this way in case I upload the code to Heroku.
 
 ### How to use
 ````
