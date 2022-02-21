@@ -9,6 +9,7 @@ The purpose of this project is to demonstrate a little of the use of EJS, with E
 - Javascript
 - NodeJS
 - Express
+- EJS
 - Jquery
 
 ### Environment
