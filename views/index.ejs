@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>TodoList v1</title>
+</head>
+<body>
+    <h1>Todo List for <%= date %></h1>
+    <p><%=message%></p>
+    <h3>Tasks:</h3>
+    <form action="/addTask" method="post">
+        <input type="text" name="newItem" id="newItem" placeholder="define a name for the task">
+        <button type="submit" disabled>Add</button>
+    </form>
+    <ul>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
