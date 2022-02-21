@@ -14,9 +14,7 @@ The purpose of this project is to demonstrate a little of the use of EJS, with E
 ### Environment
 
 Only one environment variable is in use in this project,
-the variable is PORT, the default value is 4000, this
-the variable is used by Express to listen on this PORT or 3000
-if the variable doesn't exist.
+the variable is PORT, the variable is used by Express to listen on this PORT or it'll use the port 3000 if the variable doesn't exist.
 
 ### How to use
 ````
