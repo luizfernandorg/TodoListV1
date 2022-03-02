@@ -20,19 +20,17 @@ input {
     width: 15em;
     border: 0;
     background-color: #fff;
+    padding: 1.0em;
 }
-input:focus {
-    border: 0;
-    border-color: #fff;
+#save {
+    padding: 0.65em;
 }
 button {
     background-color: #fff;
-    color: #fff;
     border: 0;
     width: 3em;
     font-weight: bold;
-    color: #000;
-
+    color: #000;  
 }
 a {
     margin-right: 0.5em;

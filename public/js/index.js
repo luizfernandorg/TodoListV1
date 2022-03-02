@@ -40,7 +40,7 @@ $("#newItem").keyup((e) => {
 // Create the option to edit the task added
 function editIt(item){
     const textForInput = $(`#${item}`).text().split("delete")[0].trim();
-    $(`#${item}`).html(`<input type='text' id="edited" value="${textForInput}"><button id="save" onClick="changeValue('${item}')">Save</button`);
+    $(`#${item}`).html(`<input type='text' id="edited" value="${textForInput}"><button id="save" onClick="changeValue('${item}')"><span class="material-icons">check</span></button>`);
 }
 
 // triggered by the save button. Will adapt the li with the new value
