@@ -19,7 +19,9 @@ app.get("/", (req,res) => {
         month: "long",
     };
     const localDate = date.toLocaleDateString(req.acceptsLanguages()[0],dateOptions);
-    
+    /**
+     * Only as an example, not really used by the application
+     */
     let msg = "";
     if(day === 6 || day === 0)
     {

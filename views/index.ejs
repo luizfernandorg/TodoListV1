@@ -9,12 +9,12 @@
     <title>TodoList v1</title>
 </head>
 <body>
-    <h1>Todo List for <%= date %></h1>
-    <p><%=message%></p>
+    <h1>Todo List</h1>
+    <h4><%= date %></h4>
     <h3>Tasks:</h3>
     <form action="/addTask" method="post">
         <input type="text" name="newItem" id="newItem" placeholder="define a name for the task">
-        <button type="submit" disabled>Add</button>
+        <button type="submit" disabled><span class="material-icons">add_circle</span></button>
     </form>
     <ul>
     </ul>

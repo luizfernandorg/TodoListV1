@@ -18,16 +18,21 @@ a {
 }
 input {
     width: 15em;
-    border-radius: 2%;
-    border: 0.2em solid #fff;
-    background-color: aliceblue;
+    border: 0;
+    background-color: #fff;
+}
+input:focus {
+    border: 0;
+    border-color: #fff;
 }
 button {
-    background-color: rgb(19, 150, 226);
+    background-color: #fff;
     color: #fff;
-    border: .2em solid rgb(188, 206, 245);
-    width: 7em;
+    border: 0;
+    width: 3em;
     font-weight: bold;
+    color: #000;
+
 }
 a {
     margin-right: 0.5em;
@@ -42,14 +47,11 @@ form {
 #newItem {
     padding: 1em;
     margin: 0;
-    border-top-left-radius: 6%;
-    border-bottom-left-radius: 6%;
 }
 button[type=submit] {
     margin: 0;
-    padding: 1em;
-    border-top-right-radius: 6%;
-    border-bottom-right-radius: 6%;
+    padding-top: 0.5em;
+    padding-right: 2em;
 }
 
 ul {
