@@ -51,13 +51,14 @@ button[type=submit] {
     border-top-right-radius: 6%;
     border-bottom-right-radius: 6%;
 }
+
 ul {
     width: 15.56em;
     padding: 0;
-    margin: 0 auto;
+    margin: 1em auto;
     li {
-        margin: 0.5em 0;
-        padding: 0.1em;
+        margin: 0.1em;
+        padding: 1.1em;
         background-color: #fdfdfd;
         display: flex;
         justify-content: center;
@@ -68,6 +69,12 @@ ul {
 
         span {
             padding: 0;
+            
+            .material-icons {
+                margin: 0;
+                padding: 0;
+                display: unset;
+            }
         }
 
         span:nth-child(1) {

@@ -16,7 +16,7 @@ $("form").on("submit", (e) => {
             { 'item': value },
             (data) => {
                 counter++;
-                $("ul").append(`<li id="item${counter}"><span>${data.item}</span> <span><a href='#' onClick="removeLine('item${counter}')">delete</a> <a href="#" onClick="editIt('item${counter}')">edit</a></span></li>`);
+                $("ul").append(`<li id="item${counter}"><span>${data.item}</span> <span><a href='#' onClick="removeLine('item${counter}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('item${counter}')"><span class="material-icons">edit</span></a></span></li>`);
                 $("#newItem").val("");
             }
         );
@@ -46,5 +46,5 @@ function editIt(item){
 // triggered by the save button. Will adapt the li with the new value
 function changeValue(item){
     const textEdited = $("#edited").val();
-    $(`#${item}`).html(`<span>${textEdited}</span> <span><a href='#' onClick="removeLine('${item}')">delete</a> <a href="#" onClick="editIt('${item}')">edit</a></span>`);
+    $(`#${item}`).html(`<span>${textEdited}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
 }

@@ -69,12 +69,12 @@ button[type=submit] {
 ul {
   width: 15.56em;
   padding: 0;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 ul li {
-  margin: 0.5em 0;
-  padding: 0.1em;
+  margin: 0.1em;
+  padding: 1.1em;
   background-color: #fdfdfd;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,6 +93,12 @@ ul li:hover {
 
 ul li span {
   padding: 0;
+}
+
+ul li span .material-icons {
+  margin: 0;
+  padding: 0;
+  display: unset;
 }
 
 ul li span:nth-child(1) {
