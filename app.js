@@ -1,9 +1,10 @@
 //jshint esversion:8
 require("dotenv").config();
 const express = require("express");
+const {getDate} = require(__dirname + "/date")
 
 const app = express();
-
+console.log(getDate())
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.json()); // enable use of json => res.json()
