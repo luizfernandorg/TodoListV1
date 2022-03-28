@@ -16,7 +16,7 @@ app.get("/", (req,res) => {
 
     const localDate = getDate(req.acceptsLanguages()[0]);
     /**
-     * Only as an example, not really used by the application
+     * Only an example, not really used by the application
      */
     let msg = "";
     if(day === 6 || day === 0)
