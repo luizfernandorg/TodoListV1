@@ -4,7 +4,6 @@ const express = require("express");
 const {getDate,getDay} = require(__dirname + "/date")
 
 const app = express();
-console.log(getDate(), getDay())
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.json()); // enable use of json => res.json()
@@ -15,11 +14,7 @@ app.get("/", (req,res) => {
     const date = new Date();
     const day = date.getDay();
 
-    const dateOptions = {
-        day: "numeric",
-        month: "long",
-    };
-    const localDate = date.toLocaleDateString(req.acceptsLanguages()[0],dateOptions);
+    const localDate = getDate(req.acceptsLanguages()[0]);
     /**
      * Only as an example, not really used by the application
      */
