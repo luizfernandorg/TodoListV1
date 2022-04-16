@@ -34,20 +34,19 @@ app.get("/", (req,res) => {
 app.post("/addTask", (req,res) => {
     const item = req.body.item;
     items.push({'id': items.length, "item":item})
-    res.json({"status": 'added', 'item': items[items.length]});
+    res.json({"status": 'added', "item": items[items.length-1]});
 });
 app.post("/removeTask", (req,res) => {
-    const id = req.body.id
+    const id = parseInt(req.body.id)
     items.splice(id,1)
     res.json({"status": "removed", 'id': id})
 })
 app.post("/updateTask", (req,res) => {
-    const id = req.body.id
+    const id = parseInt(req.body.id)
     const itemValue = req.body.item
-    console.log(id,itemValue)
-    items[id] = {'id':id, "item": itemValue}
+    items[id] = {'id':parseInt(id), "item": itemValue}
     console.log(items[id])
-    res.json({"status": "updated", 'item':items[id]})
+    res.json({"status": "updated", "item":items[id]})
 })
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
