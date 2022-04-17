@@ -5,7 +5,7 @@ const {getDate,getDay} = require(__dirname + "/date")
 
 const app = express();
 
-const items = []
+let items = []
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.json()); // enable use of json => res.json()
@@ -42,7 +42,15 @@ app.post("/addTask", (req,res) => {
 });
 app.post("/removeTask", (req,res) => {
     const id = parseInt(req.body.id)
-    items.splice(id,1)
+    const value = req.body.item
+    let index = -1
+    items.find((item, i) => {
+        if(item.item === value){
+            index = i
+            return i
+        }
+    })
+    items.splice(index,1)
     res.json({"status": "removed"})
 })
 app.post("/updateTask", (req,res) => {

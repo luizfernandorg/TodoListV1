@@ -20,16 +20,13 @@ $("form").on("submit", (e) => {
     }
 });
 function removeLine(item){
-    console.log(item)
     const url = '/removeTask'
     const key = $(`#${item}`).attr("key")
-    const value = $(`.value`).text()
-    console.log(value)
+    const value = $(`#${item} .value`).text()
     $.post(
         url,
-        { 'id': key },
+        { 'id': key, 'item': value},
         (data) => {
-            console.log("removeLine")
             console.log(data.status)
         }
     );
