@@ -1,5 +1,5 @@
 # TODO List
-# STILL IN PRODUCTION
+
 The purpose of this project is to demonstrate a little of the use of EJS, with Express and NodeJS.
 
 ### Tecnologies
