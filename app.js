@@ -44,8 +44,7 @@ app.post("/removeTask", (req,res) => {
 app.post("/updateTask", (req,res) => {
     const id = parseInt(req.body.id)
     const itemValue = req.body.item
-    items[id] = {'id':parseInt(id), "item": itemValue}
-    console.log(items[id])
+    items[id] = {'id': id, "item": itemValue}
     res.json({"status": "updated", "item":items[id]})
 })
 const PORT = process.env.PORT || 3000;

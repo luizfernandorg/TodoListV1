@@ -11,12 +11,11 @@ $("form").on("submit", (e) => {
     if(value === ""){
         return false;
     }else{
-        console.log(value)
         $.post(
             url,
             { 'item': value },
             (data) => {
-                console.log(data)
+                $("#newItem").val("")
                 $("ul").append(`<li id="item${data.item.id}" key='${data.item.id}'><span>${data.item.item}</span> <span><a href='#' onClick="removeLine('item${data.item.id}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('item${data.item.id}')"><span class="material-icons">edit</span></a></span></li>`);
             }
         );
