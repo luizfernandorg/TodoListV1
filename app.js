@@ -49,9 +49,13 @@ app.post("/updateTask", (req,res) => {
     console.log(req.body.id)
     const id = parseInt(req.body.id)
     const itemValue = req.body.item
-    items[id] = {'id': id, "item": itemValue}
+    const oldValue = req.body.old
+    const index = items.indexOf({'id':id, 'item':oldValue}) + 1
     console.log(items)
-    res.json({"status": "updated", "item":items[id]})
+    console.log(index)
+    items[index] = {'id': index, "item": itemValue}
+    console.log(items)
+    res.json({"status": "updated", "item":items[index]})
 })
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -1,8 +1,6 @@
 //jshint esversion:8
 
-/* make a post-call to the API to insert the new task
- * and then inject the new line inside the unordered list
-*/
+let oldValue = ""
 $("form").on("submit", (e) => {
     e.preventDefault();
     const url = e.target.action;
@@ -51,10 +49,8 @@ $("#newItem").keyup((e) => {
 
 // Create the option to edit the task added
 function editIt(item){
-    console.log("Edit")
-    console.log(item)
     const textForInput = $(`#${item}`).text().split("delete")[0].trim();
-    console.log(textForInput)
+    oldValue = textForInput
     $(`#${item}`).html(`<input type='text' id="edited" value="${textForInput}"><button id="save" onClick="changeValue('${item}')"><span class="material-icons">check</span></button>`);
 }
 
@@ -68,7 +64,7 @@ function changeValue(item){
     console.log(textEdited)
     $.post(
         url,
-        {'id': key, 'item':textEdited},
+        {'id': key, 'item':textEdited, 'old':oldValue},
         (data) => {
             $(`#${item}`).html(`<span class="value">${data.item.item}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
         }
