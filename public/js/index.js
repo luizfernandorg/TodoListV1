@@ -16,7 +16,7 @@ $("form").on("submit", (e) => {
             { 'item': value },
             (data) => {
                 $("#newItem").val("")
-                $("ul").append(`<li id="item${data.item.id}" key='${data.item.id}'><span>${data.item.item}</span> <span><a href='#' onClick="removeLine('item${data.item.id}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('item${data.item.id}')"><span class="material-icons">edit</span></a></span></li>`);
+                $("ul").append(`<li id="item${data.item.id}" key='${data.item.id}'><span class="value">${data.item.item}</span> <span><a href='#' onClick="removeLine('item${data.item.id}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('item${data.item.id}')"><span class="material-icons">edit</span></a></span></li>`);
             }
         );
     }
@@ -25,6 +25,8 @@ function removeLine(item){
     console.log(item)
     const url = '/removeTask'
     const key = $(`#${item}`).attr("key")
+    const value = $(`.value`).text()
+    console.log(value)
     $.post(
         url,
         { 'id': key },
@@ -68,7 +70,7 @@ function changeValue(item){
         url,
         {'id': key, 'item':textEdited},
         (data) => {
-            $(`#${item}`).html(`<span>${data.item.item}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
+            $(`#${item}`).html(`<span class="value">${data.item.item}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
         }
     )
     

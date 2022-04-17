@@ -33,21 +33,17 @@ app.get("/", (req,res) => {
 
 app.post("/addTask", (req,res) => {
     const item = req.body.item;
-    console.log(items)
     if(items.length === 0){
         items.push({'id': 0, "item":item})
     }else {
         items.push({'id': items[items.length-1].id+1, "item":item})
     }
-    console.log(items)
-    res.json({"status": 'added', "item": items[items.length-1]});
+     res.json({"status": 'added', "item": items[items.length-1]});
 });
 app.post("/removeTask", (req,res) => {
     const id = parseInt(req.body.id)
-    console.log(items)
     items.splice(id,1)
-    console.log(items)
-    res.json({"status": "removed", 'id': id})
+    res.json({"status": "removed"})
 })
 app.post("/updateTask", (req,res) => {
     console.log(req.body.id)
