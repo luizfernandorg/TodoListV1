@@ -46,15 +46,17 @@ app.post("/removeTask", (req,res) => {
     res.json({"status": "removed"})
 })
 app.post("/updateTask", (req,res) => {
-    console.log(req.body.id)
     const id = parseInt(req.body.id)
     const itemValue = req.body.item
     const oldValue = req.body.old
-    const index = items.indexOf({'id':id, 'item':oldValue}) + 1
-    console.log(items)
-    console.log(index)
+    let index = -1
+    items.find((item, id) => {
+        if(item.item === oldValue){
+            index = id
+            return id
+        }
+    })
     items[index] = {'id': index, "item": itemValue}
-    console.log(items)
     res.json({"status": "updated", "item":items[index]})
 })
 const PORT = process.env.PORT || 3000;

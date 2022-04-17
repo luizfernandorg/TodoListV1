@@ -60,8 +60,6 @@ function changeValue(item){
     const url = '/updateTask'
     const key = parseInt($(`#${item}`).attr("key"))
     const textEdited = $("#edited").val();
-    console.log(typeof key, key)
-    console.log(textEdited)
     $.post(
         url,
         {'id': key, 'item':textEdited, 'old':oldValue},
