@@ -60,15 +60,16 @@ function editIt(item){
 function changeValue(item){
     console.log(item)
     const url = '/updateTask'
-    const key = $(`#${item}`).attr("key")
+    const key = parseInt($(`#${item}`).attr("key"))
     const textEdited = $("#edited").val();
+    console.log(typeof key, key)
+    console.log(textEdited)
     $.post(
         url,
         {'id': key, 'item':textEdited},
         (data) => {
-            console.log("changeValue")
-            console.log(data.status)
+            $(`#${item}`).html(`<span>${data.item.item}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
         }
     )
-    $(`#${item}`).html(`<span>${textEdited}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
+    
 }
