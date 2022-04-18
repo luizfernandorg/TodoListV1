@@ -23,6 +23,7 @@ function removeLine(item){
     const url = '/removeTask'
     const key = $(`#${item}`).attr("key")
     const value = $(`#${item} .value`).text()
+    console.log(key, value)
     $.post(
         url,
         { 'id': key, 'item': value},

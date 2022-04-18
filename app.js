@@ -44,13 +44,17 @@ app.post("/removeTask", (req,res) => {
     const id = parseInt(req.body.id)
     const value = req.body.item
     let index = -1
+    
     items.find((item, i) => {
         if(item.item === value){
             index = i
             return i
         }
     })
-    items.splice(index,1)
+    console.log(id, index, value)
+    console.log(items)
+    items.splice(index, 1)
+    console.log(items)
     res.json({"status": "removed"})
 })
 app.post("/updateTask", (req,res) => {
@@ -58,10 +62,10 @@ app.post("/updateTask", (req,res) => {
     const itemValue = req.body.item
     const oldValue = req.body.old
     let index = -1
-    items.find((item, id) => {
+    items.find((item, i) => {
         if(item.item === oldValue){
-            index = id
-            return id
+            index = i
+            return i
         }
     })
     items[index] = {'id': index, "item": itemValue}
