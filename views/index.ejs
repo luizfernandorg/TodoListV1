@@ -18,7 +18,7 @@
     </form>
     <ul>
         <% for (var item of items) { %>
-            <li id=<%=item.id%>><span><%=item.item%></span> <span><a href='#' onClick=<%="removeLine('"+item.id+"')"%>><span class="material-icons">delete</span></a> <a href="#" onClick=<%="editIt('"+item.id+"')"%>><span class="material-icons">edit</span></a></span></li>
+            <li id=<%="item"+item.id%> key=<%=item.id%>><span class="value"><%=item.item%></span> <span><a href='#' onClick=<%="removeLine('item"+item.id+"')"%>><span class="material-icons">delete</span></a> <a href="#" onClick=<%="editIt('item"+item.id+"')"%>><span class="material-icons">edit</span></a></span></li>
         <% } %>
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

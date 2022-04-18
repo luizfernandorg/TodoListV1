@@ -23,7 +23,7 @@ function removeLine(item){
     const url = '/removeTask'
     const key = $(`#${item}`).attr("key")
     const value = $(`#${item} .value`).text()
-    console.log(key, value)
+    console.log(key, value, item)
     $.post(
         url,
         { 'id': key, 'item': value},
@@ -62,7 +62,7 @@ function changeValue(item){
         url,
         {'id': key, 'item':textEdited, 'old':oldValue},
         (data) => {
-            $(`#${item}`).html(`<span class="value">${data.item.item}</span> <span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
+            $(`#${item}`).html(`<span class="value">${data.item.item}</span><span><a href='#' onClick="removeLine('${item}')"><span class="material-icons">delete</span></a> <a href="#" onClick="editIt('${item}')"><span class="material-icons">edit</span></a></span>`);
         }
     )
     
