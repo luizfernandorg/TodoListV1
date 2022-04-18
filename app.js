@@ -17,18 +17,8 @@ app.get("/", (req,res) => {
     const day = date.getDay();
 
     const localDate = getDate(req.acceptsLanguages()[0]);
-    /**
-     * Only an example, not really used by the application
-     */
-    let msg = "";
-    if(day === 6 || day === 0)
-    {
-        msg = "It's Weekend!";
-    } else {
-        msg = "It's work day!";
-    }
 
-    res.render('index', {"message": msg, "date":localDate, 'items':items});
+    res.render('index', {"date":localDate, 'items':items});
 });
 
 app.post("/addTask", (req,res) => {
