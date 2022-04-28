@@ -41,10 +41,7 @@ app.post("/removeTask", (req,res) => {
             return i
         }
     })
-    console.log(id, index, value)
-    console.log(items)
     items.splice(index, 1)
-    console.log(items)
     res.json({"status": "removed"})
 })
 app.post("/updateTask", (req,res) => {
